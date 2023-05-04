@@ -1,0 +1,22 @@
+{
+  "name": "react-course-work",
+  "version": "1.0.0",
+  "description": "This is a new course work in react by SJ",
+  "main": "App.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jscodebit/react-course-work.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jscodebit/react-course-work/issues"
+  },
+  "homepage": "https://github.com/jscodebit/react-course-work#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
