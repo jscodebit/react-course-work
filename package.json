@@ -2,7 +2,6 @@
   "name": "react-course-work",
   "version": "1.0.0",
   "description": "This is a new course work in react by SJ",
-  "main": "App.js",
   "scripts": {
     "test": "Jest"
   },
@@ -17,6 +16,14 @@
   },
   "homepage": "https://github.com/jscodebit/react-course-work#readme",
   "devDependencies": {
-    "parcel": "^2.8.3"
-  }
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions of chrome"
+  ]
 }
