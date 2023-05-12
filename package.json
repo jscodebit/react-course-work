@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is a new course work in react by SJ",
   "scripts": {
+    "start": "npx parcel index.html",
+    "build": "parcel build index.html",
     "test": "Jest"
   },
   "repository": {
