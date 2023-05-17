@@ -1,3 +1,83 @@
-.red {
-    color: red;
+html, body, .root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+app utility styles
+*/
+
+.p-5 {
+    padding: 5px;
+}
+.mx-5 {
+    margin: 5px 0;
+}
+
+/*
+End of Utility styles
+*/
+.app-conatiner{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.app-header {
+    display: flex;
+    padding: 0 5px;
+    justify-content: space-between;
+    border: 1px solid transparent;
+}
+
+.app-header .logo-container img {
+    width: 125px;
+}
+
+.app-header .nav-items {
+    padding: 10px;
+}
+
+.app-header .nav-items > ul {
+    list-style: none;
+    display: flex;
+}
+
+.app-header .nav-items > ul > li {
+    font-size: 14px;
+    padding: 8px 20px;
+}
+
+.app-body {
+    padding: 10px;
+}
+
+.app-body .search {
+    padding: 10px 0;
+}
+
+.app-body  .res-card {
+    width: 200px;
+    height: 300px;
+    display: block;
+    margin: 5px;
+    box-shadow: 0 0 0.8 #333;
+}
+
+.res-logo {
+    width: 100%;
+    height: auto;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid #c2c1c1;
 }

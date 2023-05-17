@@ -1,5 +1,79 @@
-.red {
-  color: red;
+html, body, .root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.mx-5 {
+  margin: 5px 0;
+}
+
+.app-conatiner {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.app-header {
+  border: 1px solid #0000;
+  justify-content: space-between;
+  padding: 0 5px;
+  display: flex;
+}
+
+.app-header .logo-container img {
+  width: 125px;
+}
+
+.app-header .nav-items {
+  padding: 10px;
+}
+
+.app-header .nav-items > ul {
+  list-style: none;
+  display: flex;
+}
+
+.app-header .nav-items > ul > li {
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+.app-body {
+  padding: 10px;
+}
+
+.app-body .search {
+  padding: 10px 0;
+}
+
+.app-body .res-card {
+  width: 200px;
+  height: 300px;
+  margin: 5px;
+  display: block;
+  box-shadow: 0 0 .8px #333;
+}
+
+.res-logo {
+  width: 100%;
+  height: auto;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid #c2c1c1;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
