@@ -5,7 +5,7 @@ package-lock.json
 coverage/
 .nyc_output/
 .cache/
-.parcel-cache/
+.parcel-cache/data.mb
 dist/
 lib/
 .vscode/
