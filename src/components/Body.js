@@ -1773,9 +1773,9 @@ const Body = () => {
 
     return (
         <div className="app-body">
-            <div className="search">
+            <div className="filter">
                 <input type="text"/>
-                <button className="btn-res-search">Search</button>
+                <button className="btn-res-filter">Top rated restaurant</button>
             </div>
             <div className="res-container">
                 {restaurantList.map(restaurant => <RestaurantCard key={restaurant.data.id} resData={restaurant}/>)}
