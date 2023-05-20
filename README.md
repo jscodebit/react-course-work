@@ -49,3 +49,9 @@ import Component from "../../path";
 - Named Export/Import
 export const app_logo;  
 import { app_logo } from '../../path';
+
+# React Hooks
+They are normal JavaScript utility functions [React.js]- written by Facebook Engineers
+- There are 2 very important hooks
+- useState() - Super powerful State variables in React
+- useEffect()

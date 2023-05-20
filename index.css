@@ -30,7 +30,7 @@ End of Utility styles
     display: flex;
     padding: 0 5px;
     justify-content: space-between;
-    border: 1px solid transparent;
+    border: 1px solid #7a7474;
 }
 
 .app-header .logo-container img {

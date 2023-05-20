@@ -21,7 +21,7 @@ html, body, .root {
 }
 
 .app-header {
-  border: 1px solid #0000;
+  border: 1px solid #7a7474;
   justify-content: space-between;
   padding: 0 5px;
   display: flex;
