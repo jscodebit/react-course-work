@@ -54,4 +54,9 @@ import { app_logo } from '../../path';
 They are normal JavaScript utility functions [React.js]- written by Facebook Engineers
 - There are 2 very important hooks
 - useState() - Super powerful State variables in React
-- useEffect()
+- useEffect() - callback funtion and dependencyArray
+# Shimmer - Design pattern
+# Optional Chaining
+# Consitional Rendering Components
+- Early return
+# 
