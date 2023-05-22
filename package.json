@@ -4,7 +4,7 @@
   "description": "This is a new course work in react by SJ",
   "scripts": {
     "start": "npx parcel index.html",
-    "build": "parcel build index.html",
+    "build": "npx parcel build index.html",
     "test": "Jest"
   },
   "repository": {
@@ -18,14 +18,12 @@
   },
   "homepage": "https://github.com/jscodebit/react-course-work#readme",
   "devDependencies": {
-    "parcel": "^2.8.2",
+    "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "browserslist": [
-    "last 2 versions of chrome"
-  ]
+  "browserslist": ["last 10 versions"]
 }
