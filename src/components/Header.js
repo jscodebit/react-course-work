@@ -4,13 +4,14 @@ import { Food_APP_Logo } from '../utils/constants';
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     console.log(isLoggedIn);
+    console.log("render");
 
     // const authenticateUser = () => {
     //     //API call to check authentication
     //     return true;
     // }
     return (
-        <div className="app-header">
+        <div className="app-header"> 
             <div className="logo-container">
                 <img className="logo" src={Food_APP_Logo}/>
             </div>

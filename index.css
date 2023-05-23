@@ -81,3 +81,11 @@ End of Utility styles
     cursor: pointer;
     border: 1px solid #c2c1c1;
 }
+
+.shimmer-card {
+    width: 200px;
+    height: 300px;
+    display: block;
+    margin: 5px;
+    background-color: #eee;
+}
