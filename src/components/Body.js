@@ -23,8 +23,8 @@ const Body = () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4512177&lng=78.53485069999999&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     console.log(json);
-    setAllRestautants(json.data.cards[2].data.data.cards);
-    setFilteredRestaurants(json.data.cards[2].data.data.cards);
+    setAllRestautants(json?.data?.cards[1]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   const filterData = (searchString, resData) => {
@@ -40,7 +40,8 @@ const Body = () => {
 
   // if(filteredRestaurants?.length === 0)
   //   return 
-
+  // console.log("filteredRestaurants : ");
+  // console.log(filteredRestaurants);
   return allRestautants.length === 0 ? (<Shimmer/>) : (
     <div className="app-body">
         <div className="filter">
@@ -61,7 +62,7 @@ const Body = () => {
               >Top rated restaurant</button>
         </div>
         <div className="res-container">
-            {(filteredRestaurants?.length === 0) ? <h1>No restaurant match your Filter!</h1> : filteredRestaurants.map((restaurant) => {
+            {(filteredRestaurants?.length === 0) ? <h1>No restaurant match your Filter!</h1> : filteredRestaurants?.map((restaurant) => {
               return (<RestaurantCard key={restaurant.data.id} resData={restaurant.data}/>)
             })}
         </div>

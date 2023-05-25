@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { Food_APP_Logo } from '../utils/constants';
 
+import { Link } from 'react-router-dom';
+
+const Title = () => {
+    return (
+        <>
+            <a href="#!">
+                <img className="logo" src={Food_APP_Logo}/>
+            </a>
+        </>
+    )
+}
+
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-    console.log(isLoggedIn);
-    console.log("render");
 
     // const authenticateUser = () => {
     //     //API call to check authentication
@@ -13,13 +23,13 @@ const Header = () => {
     return (
         <div className="app-header"> 
             <div className="logo-container">
-                <img className="logo" src={Food_APP_Logo}/>
+                <Title/>
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/about"><li>About Us</li></Link>
+                    <Link to="/contact"><li>Contact Us</li></Link>
                     <li>Cart</li>
                 </ul>
             </div>
