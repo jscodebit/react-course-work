@@ -9,6 +9,7 @@ import Footer from "./src/components/Footer";
 import Error from "./src/components/Error";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestaurantMenu from "./src/components/RestaurantMenu";
 /* Lets build the top level component - AppComponent,
 ** Build our header component 
 */
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact/>
+            },
+            {
+                path: "/restaurant/:id",
+                element: <RestaurantMenu/>
             }
         ]
     },

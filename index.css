@@ -98,3 +98,7 @@ End of Utility styles
     margin: 5px;
     background-color: #eee;
 }
+
+.restaurant-menu {
+    display: flex;
+}
