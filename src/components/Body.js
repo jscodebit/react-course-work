@@ -16,7 +16,7 @@ const Body = () => {
 
   useEffect(()=> {
     console.log("useEffect");
-    getRestaurants();
+    getRestaurants()
   }, [searchText])
   console.log("re-renders");
 
