@@ -8,13 +8,13 @@ import Shimmer from "./shimmer";
 const RestaurantMenu = () => {
     const params = useParams();
     const [restaurantDetails, setRestaurantDetails] = useState(null);
-    const [groupCards, setGroupCards] = useState();
+    const [groupCards, setGroupCards] = useState({});
     
     //How to read a dynamic url params
-    const { id, lat, lng } = params;
-    const url = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4512177&lng=78.53485069999999&restaurantId="+id+"submitAction=ENTER";
+    const { id } = params;
+    const url = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4512177&lng=78.53485069999999&restaurantId="+id+"&submitAction=ENTER";
     console.log("url : "+ url);
-    console.log(id +" "+ lat +" "+ lng);
+    
     console.log(params);
 
     useEffect(()=>{
@@ -22,25 +22,32 @@ const RestaurantMenu = () => {
     }, [])
 
     async function getRestaurantInfo(){
-        const fetchRestautantDetails = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4512177&lng=78.53485069999999&restaurantId=57701&submitAction=ENTER");
+        const fetchRestautantDetails = await fetch(url);
         const json = await fetchRestautantDetails.json();
         console.log("fetchRestautantDetails :");
         console.log(json?.data?.cards);
         const details = json?.data?.cards[0]?.card?.card?.info;
-        const group = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+        const group = json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;//json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[3]?.card?.card?.categories[0];
         console.log(group);
         setRestaurantDetails(details);
-        setGroupCards(group);
+        if(group[1]?.card?.card["itemCards"]){
+            console.log(group[1]?.card?.card["itemCards"]);
+            setGroupCards(group[1]?.card?.card["itemCards"]);
+        } else if(group[1]?.card?.card["categories"][0]["itemCards"]){
+            console.log(group[1]?.card?.card["categories"][0]["itemCards"]);
+            setGroupCards(group[1]?.card?.card["categories"][0]["itemCards"]);
+        } 
     }
-    if(!restaurantDetails){
+    if(!restaurantDetails && !groupCards){
         return <Shimmer/>;
     } 
-    return restaurantDetails.length === 0 && groupCards.length === 0 ? "": (
+    
+    return (
         <div className="restaurant-menu">
             <div>
             <h1>Restaurant id: {id}</h1>
             <h2>{restaurantDetails?.name}</h2>
-            <img src={Res_Image_URL+restaurantDetails.cloudinaryImageId}/>
+            <img src={Res_Image_URL+restaurantDetails?.cloudinaryImageId}/>
             <h3>{restaurantDetails?.areaName}</h3>
             <h4>{restaurantDetails?.city}</h4>
             <h4>{restaurantDetails?.avgRating}</h4>
@@ -48,9 +55,16 @@ const RestaurantMenu = () => {
         </div>
         <div>
             <h1>Menu</h1>
-            <ul>
-                {Object.values(groupCards?.itemCards).map((item)=>(<li key={item.card.info.id}>{item.card.info.name}</li>))}
-            </ul>
+            {
+                groupCards?.length === 0 ? "" 
+                :(
+                    <ul>
+                        {Object.values(groupCards || {}).map((item)=>(<li key={item.card.info.id}>{item.card.info.name}</li>))}
+                    </ul>
+                    )
+            }
+            
+            
         </div>
         </div>
     )
