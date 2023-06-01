@@ -6,7 +6,18 @@ const Profile = (props) => {
 
     useEffect(()=> {
         console.log("useEffect");
+        //How do you destroy this in functional component
+        // const timer = setInterval(()=>{
+        //     console.log("React OP");
+        // })
+        //This is unmounting in functional component
+        // return () => {
+        //     console.log("useEffect return");
+        //     clearInterval(timer);
+        // }
     })
+
+    console.log("render");
 
     return (
         <>

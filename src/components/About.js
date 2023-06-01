@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import ProfileClassCommponent from "./ProfileClass";
+// import ProfileClassCommponent from "./ProfileClass";
 import ProfileFunctionalComponent from "./Profile";
 
 class About extends React.Component {
@@ -18,9 +18,9 @@ class About extends React.Component {
             <div>
                 <h1>About Us Page</h1>
                 {/* <Outlet/> */}
-                <ProfileClassCommponent name={"Child 1"}/>
-                <ProfileClassCommponent name={"Child 2"}/>
-                {/* <ProfileFunctionalComponent name={"Akshay"}/> */}
+                {/* <ProfileClassCommponent name={"Child 1"}/>
+                <ProfileClassCommponent name={"Child 2"}/> */}
+                <ProfileFunctionalComponent name={"Akshay"}/>
             </div>
         )
     }
